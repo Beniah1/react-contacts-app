@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EditContactsForm from './EditContactsForm';
 import Contacts from './Contact';
-import ClassForm from './ ClassForm';
+import ClassForm from './ ClassForm'; 
 
 class App extends Component {
   state = {
@@ -36,8 +36,8 @@ class App extends Component {
   }
 
   handleEditContact = (updatedContact) => {
-    const updatedContacts = this.state.contacts.map((contact) =>
-      contact === this.state.contacts[0] ? updatedContact : contact
+    const updatedContacts = this.state.contacts.map((contact, index) => // Added index to map
+      index === 0 ? updatedContact : contact // Changed the comparison
     );
     this.setState({ contacts: updatedContacts });
   }
