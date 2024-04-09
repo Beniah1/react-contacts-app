@@ -1,7 +1,7 @@
-// App.js
 import React, { Component } from 'react';
-import Contacts from './Contact';
 import EditContactsForm from './EditContactsForm';
+import Contacts from './Contact';
+import ClassForm from './ ClassForm';
 
 class App extends Component {
   state = {
@@ -15,8 +15,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Contacts contacts={this.state.contacts} handleDeleteContact={this.handleDeleteContact} />
-        <EditContactsForm contact={this.state.contacts[0]} handleEditContact={this.handleEditContact} />
+        <h1>Contacts App</h1>
+        <div>
+          <Contacts contacts={this.state.contacts} handleDeleteContact={this.handleDeleteContact} />
+          <EditContactsForm contact={this.state.contacts[0]} handleEditContact={this.handleEditContact} />
+          <ClassForm />
+        </div>
       </div>
     );
   }
